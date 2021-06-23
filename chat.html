@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Chat</title>
+		<link rel="stylesheet" href="styles.css">
+		<link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
+		<link rel='apple-touch-icon' type='image/x-icon' href='favicon.ico'>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
+	</head>
+	<body>
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<img alt="Instructions" src="info.png" width="50px" title="Instructions" style="cursor: pointer" onclick="popup('<h1>Instructions</h1>Hit enter to send a message and shift-enter to create a new line.<h2>Commands</h2><ol><li>/clear - Clears the chat</li><li>/ignore{user} - Ignores the user in the chat</li></ol></div>')">
+		<div id="enterscreen">
+			<h1>Join Chat</h1>
+			<form id="login">
+				<input type='text' name="name" placeholder="Username" id="username">
+				<input type='text' name="room" placeholder="Room" id="room">
+				<input type="submit" name="submit" value="Join">
+			</form>
+
+			<div id="error"></div>
+		</div>
+		<div style="display: none" id="chatscreen">
+			<div id="msgwrapper">
+				<div id="sticky">Double click a chat message to sticky</div>
+				<div id="messages"></div>
+
+				<form id="chatinput">
+					<textarea name="cinput" placeholder="Type message here..." rows="1"></textarea>
+					<input type="submit" name="submit" value="Send">
+				</form>
+			</div>
+
+			<div id="userList">
+				<strong>Users</strong>
+				<div id="users"></div>
+			</div>
+		</div>
+
+		<!-- Popups -->
+		<div id="screen-mask" style="display: none;"></div>
+
+        <div id="popup-modal" style="display: none;">
+            <p></p>
+            <button>OK</button>
+        </div>
+		<script async src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" crossorigin="anonymous"></script>
+		<script async src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
