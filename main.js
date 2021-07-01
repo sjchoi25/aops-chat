@@ -104,7 +104,8 @@ function renderMath() {
 }
 
 function bbcode(text) {
-	text = text.replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("&", "&amp;");
+	text = text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+	text = text.replace(/[\u200B-\u200D\uFEFF]/g, '');
 	const s_tags = ["b", "u", "i", "s"]
 
 	for (let tag = 0; tag < s_tags.length; tag++) {
