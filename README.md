@@ -1,2 +1,2 @@
 # aops-chat
-A simple chat with a UI similar to AoPS'
+A simple chat with a UI similar to AoPS' classroom.
