@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Chat</title>
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/popups.css">
+		<link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
+		<link rel='apple-touch-icon' type='image/x-icon' href='favicon.ico'>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
+	</head>
+	<body>
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 416.979 416.979" id="info">
+			<g>
+				<path d="M356.004,61.156c-81.37-81.47-213.377-81.551-294.848-0.182c-81.47,81.371-81.552,213.379-0.181,294.85   c81.369,81.47,213.378,81.551,294.849,0.181C437.293,274.636,437.375,142.626,356.004,61.156z M237.6,340.786   c0,3.217-2.607,5.822-5.822,5.822h-46.576c-3.215,0-5.822-2.605-5.822-5.822V167.885c0-3.217,2.607-5.822,5.822-5.822h46.576   c3.215,0,5.822,2.604,5.822,5.822V340.786z M208.49,137.901c-18.618,0-33.766-15.146-33.766-33.765   c0-18.617,15.147-33.766,33.766-33.766c18.619,0,33.766,15.148,33.766,33.766C242.256,122.755,227.107,137.901,208.49,137.901z"/>
+			</g>
+		</svg>
+		<div id="enterscreen">
+			<h1>Join Chat</h1>
+			<form id="login">
+				<input type='text' name="name" placeholder="Username" id="username">
+				<input type='text' name="room" placeholder="Room" id="room">
+				<input type="submit" name="submit" value="Join">
+			</form>
+
+			<div id="error"></div>
+		</div>
+		<div style="display: none" id="chatscreen">
+			<div id="msgwrapper">
+				<div id="sticky">Double click a chat message to sticky</div>
+				<div id="messages"></div>
+
+				<form id="chatinput">
+					<textarea name="cinput" placeholder="Type message here..." rows="1"></textarea>
+					<input type="submit" name="submit" value="Send">
+				</form>
+			</div>
+
+			<div id="userList">
+				<strong></strong>
+				<div id="users"></div>
+			</div>
+		</div>
+
+		<!-- Popups -->
+		<div id="screen-mask" style="display: none;"></div>
+
+        <div id="popup-modal" style="display: none;">
+            <p></p>
+            <button>OK</button>
+        </div>
+		<script src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="js/functions.js"></script>
+		<script src="js/popups.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
