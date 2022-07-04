@@ -49,6 +49,7 @@ app.get("/", (req, res) => {
 	res.sendFile('client/chat.html', {root:__dirname});
 });
 
+
 io.on('connection', (socket) => {
     socket.on('chat', (msg) => {
 		msg = clean(msg);
